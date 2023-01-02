@@ -1,5 +1,5 @@
 import { Inter } from "@next/font/google";
-import { Product, Footer, HeroBanner } from "../components";
+import { Product, Footer, HeroBanner, Layout, FooterBanner } from "../components";
 import { client } from "../lib/client";
 
 
@@ -9,6 +9,7 @@ import React from 'react'
 const Home = ({products,bannerData}) => {
   return (
     <>
+
     <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
     {console.log(bannerData)}
     <div className="products-heading">
@@ -18,7 +19,7 @@ const Home = ({products,bannerData}) => {
     <div className="products-container">
       {products?.map((product) => (<Product key={product._id} product={product} />))}
     </div>
-    <Footer footerBanner={bannerData && bannerData[0]}/>
+    <FooterBanner footerBanner={bannerData && bannerData[0]}/>
   </>
   )
   
